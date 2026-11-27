@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YT Downloader – YouTube videos up to 4K, audio in FLAC, WAV &amp; M4A</title>
+<meta name="description" content="YT Downloader for Windows: download YouTube videos up to 4K or audio as FLAC, WAV and M4A. Free trial, simple per-computer activation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M16 7v13m-6-5 6 6 6-6M9 25h14' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#fff;--fg:#0f172a;--mut:#475569;--line:#e2e8f0;--card:#fff;--soft:#f1f5f9;--acc:#2563eb;--btn:#2563eb;--btn2:#1d4ed8;--hero:linear-gradient(180deg,#eaf1ff,#fff 85%);--sh:0 10px 30px rgba(15,23,42,.08)}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--fg:#e8edf7;--mut:#a3b0c7;--line:#222c45;--card:#111831;--soft:#0f1730;--acc:#7aa7ff;--hero:linear-gradient(180deg,#111c40,#0b1020 85%);--sh:0 10px 30px rgba(0,0,0,.4)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg)}
+html[lang=en] .id,html[lang=id] .en{display:none}
+a{color:var(--acc)}h1,h2,h3{line-height:1.2;letter-spacing:-.02em;margin:0}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}.soft{background:var(--soft)}
+.eyebrow{color:var(--acc);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:6px 0 10px}.lead{color:var(--mut);max-width:640px;margin:0 0 36px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--btn);color:#fff;font-weight:600;text-decoration:none;border:1px solid var(--btn);cursor:pointer;font:inherit;font-weight:600;transition:.15s}
+.btn:hover{background:var(--btn2)}.btn.o{background:transparent;color:var(--fg);border-color:var(--line)}.btn.o:hover{background:var(--soft)}
+header{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;height:64px}.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--fg);text-decoration:none;margin-right:auto}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--btn);display:grid;place-items:center}.logo svg{width:18px;height:18px;stroke:#fff}
+.nav a.l{color:var(--mut);text-decoration:none;font-size:.95rem}.nav a.l:hover{color:var(--fg)}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--mut);padding:6px 11px;font-weight:600;font-size:.82rem;font-family:inherit;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--btn);color:#fff}
+.hero{background:var(--hero);padding:64px 0 72px}.hg{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+h1{font-size:clamp(2.1rem,4.6vw,3.3rem)}.hero p.s{font-size:1.12rem;color:var(--mut);margin:18px 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;padding:0;list-style:none}
+.chips li{font-size:.85rem;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:4px 12px;color:var(--mut)}
+.app{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);overflow:hidden;font-size:.82rem}
+.tb{display:flex;gap:6px;align-items:center;padding:10px 14px;background:var(--soft);border-bottom:1px solid var(--line);color:var(--mut);font-weight:600}
+.tb b{width:10px;height:10px;border-radius:50%;background:#cbd5e1}.ab{padding:16px;display:grid;gap:11px}
+.lic{color:var(--mut)}.fld{border:1px solid var(--line);border-radius:6px;padding:7px 10px;color:var(--mut);background:var(--bg)}
+.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.rd{display:flex;gap:6px;align-items:center}.rd i{width:12px;height:12px;border:2px solid var(--mut);border-radius:50%}.rd i.on{border-color:var(--btn);background:radial-gradient(var(--btn) 45%,transparent 50%)}
+.pb{height:10px;background:var(--soft);border:1px solid var(--line);border-radius:6px;overflow:hidden}.pb i{display:block;width:72%;height:100%;background:var(--btn)}
+.log{font:12px/1.5 ui-monospace,Consolas,monospace;color:var(--mut);background:var(--soft);border-radius:6px;padding:8px 10px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:1.1rem;margin:14px 0 6px}.card p{margin:0;color:var(--mut);font-size:.96rem}
+.ic{width:42px;height:42px;padding:10px;border-radius:11px;background:color-mix(in srgb,var(--acc) 14%,transparent);stroke:var(--acc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.step{position:relative}.num{width:34px;height:34px;border-radius:50%;background:var(--btn);color:#fff;display:grid;place-items:center;font-weight:700}
+.mail{margin-top:28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.mail p{margin:0;color:var(--mut);flex:1 1 320px}code{font:600 .95rem ui-monospace,Consolas,monospace;background:var(--soft);padding:3px 8px;border-radius:6px;color:var(--fg)}
+.price{text-align:center}.price .t{font-weight:700;color:var(--mut)}.price .a{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;margin:8px 0 0}.price .u{color:var(--mut);margin:0 0 22px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:.88rem}footer .w{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}footer p{margin:0;max-width:560px}
+@media(max-width:820px){.hg{grid-template-columns:1fr}.nav a.l{display:none}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="v" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></symbol>
+<symbol id="a" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+<symbol id="t" viewBox="0 0 24 24"><path d="M20 12 12 20 4 12V4h8z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+<symbol id="p" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+<symbol id="f" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="r" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></symbol>
+<symbol id="l" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</defs></svg>
+
+<header><div class="w nav">
+<a class="logo" href="#top"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-4 5 5 5-5M6 20h12"/></svg></i>YT Downloader</a>
+<a class="l" href="#features"><span class="en">Features</span><span class="id">Fitur</span></a>
+<a class="l" href="#activation"><span class="en">Activation</span><span class="id">Aktivasi</span></a>
+<a class="l" href="#pricing"><span class="en">Pricing</span><span class="id">Harga</span></a>
+<a class="l" href="#faq">FAQ</a>
+<div class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button data-l="id" aria-pressed="false">ID</button></div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="w hg">
+<div>
+<h1><span class="en">Download YouTube videos in up to 4K — or audio as FLAC, WAV &amp; M4A.</span><span class="id">Unduh video YouTube hingga 4K — atau audio FLAC, WAV &amp; M4A.</span></h1>
+<p class="s"><span class="en">A fast, clean Windows app powered by yt-dlp and ffmpeg. Paste a link, pick your quality and download — with live progress and no clutter.</span><span class="id">Aplikasi Windows yang cepat dan bersih, ditenagai yt-dlp dan ffmpeg. Tempel tautan, pilih kualitas, lalu unduh — lengkap dengan progres langsung.</span></p>
+<div class="cta"><a class="btn" id="dl" href="#"><span class="en">Download free trial</span><span class="id">Unduh trial gratis</span></a><a class="btn o" href="#pricing"><span class="en">See pricing</span><span class="id">Lihat harga</span></a></div>
+<ul class="chips"><li>Windows 10/11 · 64-bit</li><li><span class="en">30-day free trial</span><span class="id">Trial gratis 30 hari</span></li><li><span class="en">Activation per computer</span><span class="id">Aktivasi per komputer</span></li></ul>
+</div>
+<div class="app" aria-hidden="true"><div class="tb"><b></b><b></b><b></b>&nbsp;YT Downloader</div><div class="ab">
+<div class="lic">License: Trial - 29 day(s) left</div>
+<div class="fld">https://www.youtube.com/watch?v=…</div>
+<div class="row"><span class="rd"><i class="on"></i>Video</span><span class="rd"><i></i>Audio only</span></div>
+<div class="row"><span>Resolution:</span><span class="fld">1080p (Full HD) ▾</span></div>
+<div class="pb"><i></i></div>
+<div class="log">[download]  72.0% of 10.00MiB at 2.00MiB/s<br>[Merger] Merging formats into .mkv</div>
+</div></div>
+</div></section>
+
+<section id="features"><div class="w">
+<div class="eyebrow"><span class="en">Features</span><span class="id">Fitur</span></div>
+<h2><span class="en">Everything you need, nothing you don’t</span><span class="id">Semua yang Anda butuhkan, tanpa yang tidak perlu</span></h2>
+<p class="lead"><span class="en">Built around the way people actually download: one link, one choice, one click.</span><span class="id">Dibuat mengikuti cara orang mengunduh: satu tautan, satu pilihan, satu klik.</span></p>
+<div class="grid">
+<div class="card"><svg class="ic"><use href="#v"/></svg><h3><span class="en">Video up to 4K</span><span class="id">Video hingga 4K</span></h3><p><span class="en">Choose 360p, 480p, 720p, 1080p, 1440p, 2160p or the best available. Video and audio are merged into a single .mkv file.</span><span class="id">Pilih 360p, 480p, 720p, 1080p, 1440p, 2160p atau yang terbaik. Video dan audio digabung menjadi satu file .mkv.</span></p></div>
+<div class="card"><svg class="ic"><use href="#a"/></svg><h3><span class="en">Audio in FLAC, WAV or M4A</span><span class="id">Audio FLAC, WAV atau M4A</span></h3><p><span class="en">Extract audio as FLAC or WAV, or keep the original AAC as M4A with no re-encoding.</span><span class="id">Ekstrak audio sebagai FLAC atau WAV, atau simpan AAC asli sebagai M4A tanpa konversi ulang.</span></p></div>
+<div class="card"><svg class="ic"><use href="#t"/></svg><h3><span class="en">Metadata, thumbnail &amp; chapters</span><span class="id">Metadata, thumbnail &amp; chapter</span></h3><p><span class="en">Embed metadata and cover thumbnails — plus chapters for video — straight into the file.</span><span class="id">Sematkan metadata dan thumbnail — serta chapter untuk video — langsung ke dalam file.</span></p></div>
+<div class="card"><svg class="ic"><use href="#p"/></svg><h3><span class="en">Live progress &amp; log</span><span class="id">Progres &amp; log langsung</span></h3><p><span class="en">Follow a progress bar and the full download log in real time, and cancel whenever you like.</span><span class="id">Pantau progress bar dan log unduhan secara real time, dan batalkan kapan saja.</span></p></div>
+<div class="card"><svg class="ic"><use href="#f"/></svg><h3><span class="en">Your folder, one click away</span><span class="id">Folder Anda, satu klik</span></h3><p><span class="en">Pick the destination folder and open it straight from the app.</span><span class="id">Pilih folder tujuan dan buka langsung dari aplikasi.</span></p></div>
+<div class="card"><svg class="ic"><use href="#r"/></svg><h3><span class="en">One-click yt-dlp update</span><span class="id">Perbarui yt-dlp satu klik</span></h3><p><span class="en">YouTube changes often. Update yt-dlp from inside the app whenever downloads stop working.</span><span class="id">YouTube sering berubah. Perbarui yt-dlp dari dalam aplikasi saat unduhan berhenti berfungsi.</span></p></div>
+<div class="card"><svg class="ic"><use href="#l"/></svg><h3><span class="en">Single-video focus</span><span class="id">Fokus satu video</span></h3><p><span class="en">Pasting a link downloads that video — playlists aren’t pulled in by accident.</span><span class="id">Menempel tautan hanya mengunduh video itu — playlist tidak ikut terunduh tanpa sengaja.</span></p></div>
+<div class="card"><svg class="ic"><use href="#c"/></svg><h3><span class="en">Free trial built in</span><span class="id">Trial gratis bawaan</span></h3><p><span class="en">Try everything first. The trial starts automatically on first launch — no sign-up needed.</span><span class="id">Coba semuanya dulu. Trial dimulai otomatis saat pertama dibuka — tanpa pendaftaran.</span></p></div>
+</div></div></section>
+
+<section class="soft"><div class="w">
+<div class="eyebrow"><span class="en">How it works</span><span class="id">Cara kerja</span></div>
+<h2><span class="en">Three steps to your file</span><span class="id">Tiga langkah menuju file Anda</span></h2><p class="lead"></p>
+<div class="grid">
+<div class="card step"><div class="num">1</div><h3><span class="en">Paste the link</span><span class="id">Tempel tautan</span></h3><p><span class="en">Copy a YouTube link and paste it into the app.</span><span class="id">Salin tautan YouTube dan tempel ke aplikasi.</span></p></div>
+<div class="card step"><div class="num">2</div><h3><span class="en">Choose video or audio</span><span class="id">Pilih video atau audio</span></h3><p><span class="en">Select a resolution, or FLAC, WAV or M4A for audio only.</span><span class="id">Pilih resolusi, atau FLAC, WAV, M4A untuk audio saja.</span></p></div>
+<div class="card step"><div class="num">3</div><h3><span class="en">Click Download</span><span class="id">Klik Download</span></h3><p><span class="en">Watch the progress and open the folder when it’s done.</span><span class="id">Pantau progres dan buka folder saat selesai.</span></p></div>
+</div></div></section>
+
+<section id="activation"><div class="w">
+<div class="eyebrow"><span class="en">Activation</span><span class="id">Aktivasi</span></div>
+<h2><span class="en">Simple activation, per computer</span><span class="id">Aktivasi sederhana, per komputer</span></h2>
+<p class="lead"><span class="en">An activation key that is unique to your computer.</span><span class="id">Kunci aktivasi yang unik untuk komputer Anda.</span></p>
+<div class="grid">
+<div class="card step"><div class="num">1</div><h3><span class="en">Copy the Hardware ID</span><span class="id">Salin Hardware ID</span></h3><p><span class="en">When the app asks for activation, copy your computer’s Hardware ID or send it directly with the email button in the dialog. Prefer to email manually? Use the address below and include your full Hardware ID.</span><span class="id">Saat aplikasi meminta aktivasi, salin Hardware ID komputer Anda atau kirim langsung lewat tombol email di dialog. Lebih suka kirim manual? Gunakan alamat di bawah dan sertakan Hardware ID lengkap Anda.</span></p></div>
+<div class="card step"><div class="num">2</div><h3><span class="en">Receive the activation key</span><span class="id">Terima kunci aktivasi</span></h3><p><span class="en">The developer creates an activation key from that Hardware ID and sends it to you.</span><span class="id">Developer membuat kunci aktivasi dari Hardware ID tersebut dan mengirimkannya kepada Anda.</span></p></div>
+<div class="card step"><div class="num">3</div><h3><span class="en">Enter it &amp; done</span><span class="id">Masukkan &amp; selesai</span></h3><p><span class="en">Paste the key or load the <code>serial.key</code> file. The key is saved, so you won’t need to enter it again.</span><span class="id">Tempel kunci atau muat file <code>serial.key</code>. Kunci tersimpan, jadi Anda tidak perlu memasukkannya lagi.</span></p></div>
+</div>
+<div class="card mail"><p><span class="en">Want to send an email manually? Send your full Hardware ID (copy it from the Activation dialog) to this address:</span><span class="id">Ingin kirim email manual? Kirim Hardware ID lengkap Anda (salin dari dialog Activation) ke alamat ini:</span> <code>xroot64bit@gmail.com</code></p>
+<div class="cta"><button class="btn o" id="cp" type="button"><span class="en">Copy email</span><span class="id">Salin email</span></button><a class="btn" href="mailto:xroot64bit@gmail.com?subject=Request%20License%20Key"><span class="en">Open email app</span><span class="id">Buka aplikasi email</span></a></div></div>
+</div></section>
+
+<section id="pricing" class="soft"><div class="w">
+<div class="eyebrow"><span class="en">Activation pricing</span><span class="id">Harga aktivasi</span></div>
+<h2><span class="en">Clear activation pricing</span><span class="id">Harga aktivasi yang jelas</span></h2>
+<p class="lead"><span class="en">An activation key is unique to each computer. Contact the developer by email to pay and request your activation key.</span><span class="id">Kunci aktivasi unik untuk setiap komputer. Hubungi developer lewat email untuk pembayaran dan permintaan kunci aktivasi.</span></p>
+<div class="grid" style="max-width:720px">
+<div class="card price"><div class="t"><span class="en">Indonesia</span><span class="id">Indonesia</span></div><div class="a"><span class="en">Rp 50,000</span><span class="id">Rp 50.000</span></div><p class="u"><span class="en">per activation (one computer)</span><span class="id">per aktivasi (satu komputer)</span></p><a class="btn" href="mailto:xroot64bit@gmail.com?subject=Request%20License%20Key"><span class="en">Request activation</span><span class="id">Minta aktivasi</span></a></div>
+<div class="card price"><div class="t"><span class="en">International</span><span class="id">Internasional</span></div><div class="a"><span class="en">US$ 5.99</span><span class="id">US$ 5,99</span></div><p class="u"><span class="en">per activation (one computer)</span><span class="id">per aktivasi (satu komputer)</span></p><a class="btn" href="mailto:xroot64bit@gmail.com?subject=Request%20License%20Key"><span class="en">Request activation</span><span class="id">Minta aktivasi</span></a></div>
+</div></div></section>
+
+<section id="faq"><div class="w" style="max-width:760px">
+<div class="eyebrow">FAQ</div><h2><span class="en">Good to know</span><span class="id">Perlu diketahui</span></h2><p class="lead"></p>
+<details><summary><span class="en">Are FLAC and WAV better quality than M4A?</span><span class="id">Apakah FLAC dan WAV berkualitas lebih baik dari M4A?</span></summary><p><span class="en">YouTube audio is lossy (Opus/AAC). FLAC and WAV store it losslessly, but the quality does not improve beyond the source and the files are larger. Choose M4A to keep the original AAC without re-encoding.</span><span class="id">Audio YouTube bersifat lossy (Opus/AAC). FLAC dan WAV menyimpannya tanpa kehilangan kualitas tambahan, tetapi kualitasnya tidak meningkat dari sumber dan ukuran file lebih besar. Pilih M4A untuk mempertahankan AAC asli tanpa konversi ulang.</span></p></details>
+<details><summary><span class="en">What do I need to run it?</span><span class="id">Apa yang saya butuhkan untuk menjalankannya?</span></summary><p><span class="en">Windows 10 or 11 (64-bit). The app uses yt-dlp and ffmpeg, kept next to the program; use the Update yt-dlp button to keep downloads working.</span><span class="id">Windows 10 atau 11 (64-bit). Aplikasi memakai yt-dlp dan ffmpeg yang diletakkan di samping program; gunakan tombol Update yt-dlp agar unduhan tetap berfungsi.</span></p></details>
+<details><summary><span class="en">How does the free trial work?</span><span class="id">Bagaimana trial gratis bekerja?</span></summary><p><span class="en">The 30-day trial starts automatically the first time you open the app — no sign-up. When it ends, the app asks you to activate.</span><span class="id">Trial 30 hari dimulai otomatis saat aplikasi pertama kali dibuka — tanpa pendaftaran. Setelah berakhir, aplikasi akan meminta aktivasi.</span></p></details>
+<details><summary><span class="en">Can I use one key on another computer?</span><span class="id">Bisakah satu kunci dipakai di komputer lain?</span></summary><p><span class="en">No. Each activation key is unique to one computer’s Hardware ID. For another computer, request a new key.</span><span class="id">Tidak. Setiap kunci aktivasi unik untuk Hardware ID satu komputer. Untuk komputer lain, minta kunci baru.</span></p></details>
+<details><summary><span class="en">What am I allowed to download?</span><span class="id">Apa yang boleh saya unduh?</span></summary><p><span class="en">Only content you own, that is openly licensed, or that you have permission to download. Downloading from YouTube may violate its Terms of Service.</span><span class="id">Hanya konten milik Anda, berlisensi terbuka, atau yang Anda punya izin untuk mengunduhnya. Mengunduh dari YouTube dapat melanggar Ketentuan Layanannya.</span></p></details>
+</div></section>
+</main>
+
+<footer><div class="w"><p>© 2026 YT Downloader · <a href="mailto:xroot64bit@gmail.com">xroot64bit@gmail.com</a></p>
+<p><span class="en">Not affiliated with, endorsed by, or sponsored by YouTube or Google. YouTube is a trademark of Google LLC.</span><span class="id">Tidak berafiliasi, didukung, atau disponsori oleh YouTube maupun Google. YouTube adalah merek dagang Google LLC.</span></p></div></footer>
+
+<script>
+var DOWNLOAD_URL = "#"; // ← set the link to your trial installer / download page
+(function(){
+  var d=document,h=d.documentElement,dl=d.getElementById("dl");
+  if(DOWNLOAD_URL!=="#")dl.href=DOWNLOAD_URL;else dl.addEventListener("click",function(e){e.preventDefault();});
+  function set(l){h.lang=l;d.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===l)});
+    d.title=l==="id"?"YT Downloader – Video YouTube hingga 4K, audio FLAC, WAV & M4A":"YT Downloader – YouTube videos up to 4K, audio in FLAC, WAV & M4A";
+    try{localStorage.setItem("lang",l)}catch(e){}}
+  var s=null;try{s=localStorage.getItem("lang")}catch(e){}
+  set(s||((navigator.language||"").slice(0,2)==="id"?"id":"en"));
+  d.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.l)})});
+  d.getElementById("cp").addEventListener("click",function(){
+    var b=this,t=b.innerHTML,m='<span class="en">Copied!</span><span class="id">Tersalin!</span>';
+    function ok(){b.innerHTML=m;setTimeout(function(){b.innerHTML=t},1600)}
+    if(navigator.clipboard)navigator.clipboard.writeText("xroot64bit@gmail.com").then(ok,function(){});else ok();
+  });
+})();
+</script>
+</body>
+</html>
